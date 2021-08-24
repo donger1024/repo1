@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="userDao" class="com.lagou.dao.Impl.IUserDaoImpl"></bean>
+
+    <bean id="userDao2" class="com.lagou.dao.Impl.IUserDaoImpl2"></bean>
+
+    <bean id="userService" class="com.lagou.service.impl.UserServiceImpl">
+        <constructor-arg name="userDao" ref="userDao"></constructor-arg>
+    </bean>
+</beans>
